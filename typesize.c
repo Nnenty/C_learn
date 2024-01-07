@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main(void)
 {
     printf("Тип int имеет размер %zd байта(ов).\n", sizeof(int));
