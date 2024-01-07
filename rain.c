@@ -12,8 +12,8 @@ int main(void)
             {7.6, 5.6, 3.8, 2.8, 3.8, 0.2, 0.0, 0.0, 0.0, 1.3, 2.6, 5.2}};
     int year, month;
     float subtot, total;
-    printf("ГОД     КОЛИЧЕСТВО ОСАДКОЙ(в дюймах)'n");
-    for (year = 0, total = 0; years < YEARS; year++)
+    printf(" ГОД     КОЛИЧЕСТВО ОСАДКОЙ(в дюймах)\n");
+    for (year = 0, total = 0; year < YEARS; year++)
     {
         for (month = 0, subtot = 0; month < MONTHS; month++)
         {
@@ -22,4 +22,21 @@ int main(void)
         printf("%5d %15.1f\n", 2010 + year, subtot);
         total += subtot;
     }
+    printf("\nСреднегодовое количество осадков составляет %.1f дюймов.\n\n",
+           total / YEARS);
+    printf("СРЕДНЕМЕСЯЧНОЕ КОЛИЧЕСТВО ОСАДКОВ:\n\n");
+    printf("  янв  фев  мар  апр  май  июн  июл"
+           "  авг  сен  окт  ноя  дек\n");
+
+    for (month = 0; month < MONTHS; month++)
+    {
+        for (year = 0, subtot = 0; year < YEARS; year++)
+        {
+            subtot += rain[year][month];
+        }
+        printf("%5.1f", subtot / YEARS);
+    }
+    printf("\n");
+
+    return 0;
 }
