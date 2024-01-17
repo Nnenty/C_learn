@@ -39,8 +39,12 @@
 # Debug files
 *.dSYM/
 *.su
-*.idb
+*.idbs
 *.pdb
+
+*
+!*.c
+!Makefiles
 
 # Kernel Module Compile Results
 *.mod*
