@@ -16,12 +16,12 @@ int main(void)
         "Рассылка писем", "Просмотр телевизора",
         "Чтение статей"};
 
-    puts("\tСравним наши таланты.");
-    printf(" %-52s  %-25s\n", "Мои таланты", "Ваши таланты");
+    puts("\t     Сравним наши таланты.");
+    printf("%-45s %-25s\n", "Ваши таланты", "Мои таланты");
 
     for (i = 0; i < LIM; i++)
     {
-        printf("%-52s | %-25s\n", mytalents[i], yourtalents[i]);
+        printf("%-42s %-25s\n", yourtalents[i], mytalents[i]);
     }
 
     printf("\nРазмер mytalents: %zd;\nРазмер yourtalents: %zd\n",
