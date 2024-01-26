@@ -8,7 +8,6 @@ int main(void)
 
     puts("Введите строки (или пустую строку для выхода):");
     while (fgets(words, STLEN, stdin) != NULL && words[0] != '\n')
-        ;
     {
         fputs(words, stdout);
     }
