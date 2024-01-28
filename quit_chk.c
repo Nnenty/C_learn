@@ -5,7 +5,6 @@
 #define LIM 10
 #define STOP "quit"
 
-char *quit(char *str);
 char *s_gets(char *str, int size);
 
 int main(void)
