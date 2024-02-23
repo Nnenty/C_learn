@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
         if (count++ % 3 == 0)
         {
             putc(ch, out);
+            putc(ch, stdout);
         }
     }
 
