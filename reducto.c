@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Не удается создать выходной файл.\n");
         exit(3);
     }
+
     while ((ch = getc(in)) != EOF)
     {
         if (count++ % 3 == 0)
@@ -38,6 +39,7 @@ int main(int argc, char *argv[])
             putc(ch, out);
         }
     }
+
     if (fclose(in) != 0 || fclose(out) != 0)
     {
         fprintf(stderr, "Ошибка при закрытии файлов.\n");
