@@ -8,21 +8,33 @@ int main(void)
 {
     FILE *fp;
     char words[MAX];
+    char name[MAX];
+    char *ptr;
 
-    if ((fp = fopen("wordy", "a+")) == NULL)
+    puts("Введите название для файла, в котором вы можете хранить слова");
+    puts("(если вы уже создали такой файл, введите его название):");
+    fgets(name, MAX, stdin);
+
+    ptr = strchr(name, '\n');
+    if (ptr != 0)
     {
-        fprintf(stderr, " Не удается открыть файл \"wordy\"\n");
+        *ptr = '\0';
+    }
+
+    if ((fp = fopen(name, "a+")) == NULL)
+    {
+        fprintf(stderr, " Не удается открыть файл \"%s\"\n", name);
         exit(EXIT_FAILURE);
     }
 
-    puts("Введите слова для добавления в файл wordy.");
+    printf("Введите слова для добавления в файл %s.\n", name);
     puts("Для завершения введите символ \"#\" в начале строки.");
     while ((fscanf(stdin, "%40s", words) == 1) && (words[0] != '#'))
     {
         fprintf(fp, "%s\n", words);
     }
 
-    puts("Содержимое файла");
+    printf("Содержимое файла %s:\n", name);
     rewind(fp);
     while (fscanf(fp, "%s", words) == 1)
     {
