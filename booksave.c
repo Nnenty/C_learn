@@ -32,7 +32,7 @@ int main(void)
 
     rewind(pbooks);
     while (count < MAXBKS && fread(&library[count],
-                                   size, 1, pbooks) == 1)
+                                   size, 1, pbooks) != 0)
     {
         if (count == 0)
         {
